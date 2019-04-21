@@ -27,7 +27,7 @@ CREATE TABLE Goals (
 
 -- Tracking financial aid
 CREATE TABLE FinancialAidType (
-    typeName      VARCHAR(30)
+    typeName      VARCHAR(30),
     PRIMARY KEY (typeName)
 );
 
@@ -36,5 +36,5 @@ CREATE TABLE FinancialAidAmt (
     finAidType        VARCHAR(30),
     finAidAmount      MONEY,
     PRIMARY KEY (finAidName),
-    FOREIGN KEY (finAidType) REFERENCES FinancialAidType
+    FOREIGN KEY (finAidType) REFERENCES FinancialAidType(typeName)
 );
