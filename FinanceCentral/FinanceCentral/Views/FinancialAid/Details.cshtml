@@ -1,0 +1,42 @@
+﻿@model FinanceCentral.Models.FinancialAidAmt
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FinancialAidAmt</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.finAidName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.finAidName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.finAidType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.finAidType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.finAidAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.finAidAmount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

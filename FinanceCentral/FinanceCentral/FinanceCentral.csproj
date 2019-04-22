@@ -230,10 +230,14 @@
     <Content Include="Views\Expenses\Edit.cshtml" />
     <Content Include="Views\Expenses\Delete.cshtml" />
     <Content Include="Views\Expenses\Details.cshtml" />
+    <Content Include="Views\FinancialAid\Index.cshtml" />
+    <Content Include="Views\FinancialAid\Details.cshtml" />
+    <Content Include="Views\FinancialAid\Edit.cshtml" />
+    <Content Include="Views\FinancialAid\Delete.cshtml" />
+    <Content Include="Views\FinancialAid\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\FinancialAid\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using FinanceCentral.Models;
 
 namespace FinanceCentral.Controllers
 {
@@ -11,13 +10,17 @@ namespace FinanceCentral.Controllers
         // GET: FinancialAid
         public ActionResult Index()
         {
-            return View();
+            using (FCModels finAidAmtModel = new FCModels())
+                return View(finAidAmtModel.FinancialAidAmt.ToList());
         }
 
         // GET: FinancialAid/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string name)
         {
-            return View();
+            using (FCModels finAidAmtModel = new FCModels())
+            {
+                return View(finAidAmtModel.FinancialAidAmt.Where(x => x.finAidName == name).FirstOrDefault());
+            }
         }
 
         // GET: FinancialAid/Create
@@ -28,11 +31,15 @@ namespace FinanceCentral.Controllers
 
         // POST: FinancialAid/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(FinancialAidAmt finAid)
         {
             try
             {
-                // TODO: Add insert logic here
+                using (FCModels finAidAmtModel = new FCModels())
+                {
+                    finAidAmtModel.FinancialAidAmt.Add(finAid);
+                    finAidAmtModel.SaveChanges();
+                }
 
                 return RedirectToAction("Index");
             }
@@ -43,18 +50,25 @@ namespace FinanceCentral.Controllers
         }
 
         // GET: FinancialAid/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string name)
         {
-            return View();
+            using (FCModels finAidAmtModel = new FCModels())
+            {
+                return View(finAidAmtModel.FinancialAidAmt.Where(x => x.finAidName == name).FirstOrDefault());
+            }
         }
 
         // POST: FinancialAid/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(string name, FinancialAidAmt finAid)
         {
             try
             {
-                // TODO: Add update logic here
+                using (FCModels finAidAmtModel = new FCModels())
+                {
+                    finAidAmtModel.Entry(finAid).State = EntityState.Modified;
+                    finAidAmtModel.SaveChanges();
+                }
 
                 return RedirectToAction("Index");
             }
@@ -65,18 +79,26 @@ namespace FinanceCentral.Controllers
         }
 
         // GET: FinancialAid/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string name)
         {
-            return View();
+            using (FCModels finAidAmtModel = new FCModels())
+            {
+                return View(finAidAmtModel.FinancialAidAmt.Where(x => x.finAidName == name).FirstOrDefault());
+            }
         }
 
         // POST: FinancialAid/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(string name, FormCollection collection)
         {
             try
             {
-                // TODO: Add delete logic here
+                using (FCModels finAidAmtModel = new FCModels())
+                {
+                    FinancialAidAmt finAid = finAidAmtModel.FinancialAidAmt.Where(x => x.finAidName == name).FirstOrDefault();
+                    finAidAmtModel.FinancialAidAmt.Remove(finAid);
+                    finAidAmtModel.SaveChanges();
+                }
 
                 return RedirectToAction("Index");
             }
