@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FinanceCentralModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Expenses">
+          <Key>
+            <PropertyRef Name="expenseID" />
+          </Key>
+          <Property Name="expenseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="expenseName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="amount" Type="money" />
+          <Property Name="category" Type="varchar" MaxLength="30" />
+          <Property Name="month" Type="varchar" MaxLength="9" />
+          <Property Name="day" Type="int" />
+          <Property Name="year" Type="int" />
+          <Property Name="incomeID" Type="int" />
+        </EntityType>
+        <EntityType Name="FinancialAidAmt">
+          <Key>
+            <PropertyRef Name="finAidName" />
+          </Key>
+          <Property Name="finAidName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="finAidType" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="finAidAmount" Type="money" />
+        </EntityType>
+        <EntityType Name="FinancialAidType">
+          <Key>
+            <PropertyRef Name="typeName" />
+          </Key>
+          <Property Name="typeName" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Goals">
+          <Key>
+            <PropertyRef Name="goalID" />
+          </Key>
+          <Property Name="goalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="goalDescription" Type="varchar" MaxLength="150" />
+          <Property Name="goalTarget" Type="money" />
+          <Property Name="goalCurrent" Type="money" />
+          <Property Name="incomeID" Type="int" />
+        </EntityType>
+        <EntityType Name="Income">
+          <Key>
+            <PropertyRef Name="incomeID" />
+          </Key>
+          <Property Name="incomeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="incomeName" Type="varchar" MaxLength="30" />
+          <Property Name="hourlyWage" Type="money" />
+          <Property Name="avgWeeklyHours" Type="int" />
+        </EntityType>
+        <Association Name="FK__Expenses__income__4BAC3F29">
+          <End Role="Income" Type="Self.Income" Multiplicity="0..1" />
+          <End Role="Expenses" Type="Self.Expenses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Income">
+              <PropertyRef Name="incomeID" />
+            </Principal>
+            <Dependent Role="Expenses">
+              <PropertyRef Name="incomeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Financial__finAi__534D60F1">
+          <End Role="FinancialAidType" Type="Self.FinancialAidType" Multiplicity="1" />
+          <End Role="FinancialAidAmt" Type="Self.FinancialAidAmt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinancialAidType">
+              <PropertyRef Name="typeName" />
+            </Principal>
+            <Dependent Role="FinancialAidAmt">
+              <PropertyRef Name="finAidType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Goals__incomeID__4E88ABD4">
+          <End Role="Income" Type="Self.Income" Multiplicity="0..1" />
+          <End Role="Goals" Type="Self.Goals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Income">
+              <PropertyRef Name="incomeID" />
+            </Principal>
+            <Dependent Role="Goals">
+              <PropertyRef Name="incomeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FinanceCentralModelStoreContainer">
+          <EntitySet Name="Expenses" EntityType="Self.Expenses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinancialAidAmt" EntityType="Self.FinancialAidAmt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinancialAidType" EntityType="Self.FinancialAidType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Goals" EntityType="Self.Goals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Income" EntityType="Self.Income" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Expenses__income__4BAC3F29" Association="Self.FK__Expenses__income__4BAC3F29">
+            <End Role="Income" EntitySet="Income" />
+            <End Role="Expenses" EntitySet="Expenses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Financial__finAi__534D60F1" Association="Self.FK__Financial__finAi__534D60F1">
+            <End Role="FinancialAidType" EntitySet="FinancialAidType" />
+            <End Role="FinancialAidAmt" EntitySet="FinancialAidAmt" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Goals__incomeID__4E88ABD4" Association="Self.FK__Goals__incomeID__4E88ABD4">
+            <End Role="Income" EntitySet="Income" />
+            <End Role="Goals" EntitySet="Goals" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FinanceCentralModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Expens">
+          <Key>
+            <PropertyRef Name="expenseID" />
+          </Key>
+          <Property Name="expenseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="expenseName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="category" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="month" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="day" Type="Int32" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="incomeID" Type="Int32" />
+          <NavigationProperty Name="Income" Relationship="Self.FK__Expenses__income__4BAC3F29" FromRole="Expenses" ToRole="Income" />
+        </EntityType>
+        <EntityType Name="FinancialAidAmt">
+          <Key>
+            <PropertyRef Name="finAidName" />
+          </Key>
+          <Property Name="finAidName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="finAidType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="finAidAmount" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="FinancialAidType" Relationship="Self.FK__Financial__finAi__534D60F1" FromRole="FinancialAidAmt" ToRole="FinancialAidType" />
+        </EntityType>
+        <EntityType Name="FinancialAidType">
+          <Key>
+            <PropertyRef Name="typeName" />
+          </Key>
+          <Property Name="typeName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="FinancialAidAmts" Relationship="Self.FK__Financial__finAi__534D60F1" FromRole="FinancialAidType" ToRole="FinancialAidAmt" />
+        </EntityType>
+        <EntityType Name="Goal">
+          <Key>
+            <PropertyRef Name="goalID" />
+          </Key>
+          <Property Name="goalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="goalDescription" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="goalTarget" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="goalCurrent" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="incomeID" Type="Int32" />
+          <NavigationProperty Name="Income" Relationship="Self.FK__Goals__incomeID__4E88ABD4" FromRole="Goals" ToRole="Income" />
+        </EntityType>
+        <EntityType Name="Income">
+          <Key>
+            <PropertyRef Name="incomeID" />
+          </Key>
+          <Property Name="incomeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="incomeName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="hourlyWage" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="avgWeeklyHours" Type="Int32" />
+          <NavigationProperty Name="Expenses" Relationship="Self.FK__Expenses__income__4BAC3F29" FromRole="Income" ToRole="Expenses" />
+          <NavigationProperty Name="Goals" Relationship="Self.FK__Goals__incomeID__4E88ABD4" FromRole="Income" ToRole="Goals" />
+        </EntityType>
+        <Association Name="FK__Expenses__income__4BAC3F29">
+          <End Role="Income" Type="Self.Income" Multiplicity="0..1" />
+          <End Role="Expenses" Type="Self.Expens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Income">
+              <PropertyRef Name="incomeID" />
+            </Principal>
+            <Dependent Role="Expenses">
+              <PropertyRef Name="incomeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Financial__finAi__534D60F1">
+          <End Role="FinancialAidType" Type="Self.FinancialAidType" Multiplicity="1" />
+          <End Role="FinancialAidAmt" Type="Self.FinancialAidAmt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinancialAidType">
+              <PropertyRef Name="typeName" />
+            </Principal>
+            <Dependent Role="FinancialAidAmt">
+              <PropertyRef Name="finAidType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Goals__incomeID__4E88ABD4">
+          <End Role="Income" Type="Self.Income" Multiplicity="0..1" />
+          <End Role="Goals" Type="Self.Goal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Income">
+              <PropertyRef Name="incomeID" />
+            </Principal>
+            <Dependent Role="Goals">
+              <PropertyRef Name="incomeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FCModels" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Expenses" EntityType="Self.Expens" />
+          <EntitySet Name="FinancialAidAmts" EntityType="Self.FinancialAidAmt" />
+          <EntitySet Name="FinancialAidTypes" EntityType="Self.FinancialAidType" />
+          <EntitySet Name="Goals" EntityType="Self.Goal" />
+          <EntitySet Name="Incomes" EntityType="Self.Income" />
+          <AssociationSet Name="FK__Expenses__income__4BAC3F29" Association="Self.FK__Expenses__income__4BAC3F29">
+            <End Role="Income" EntitySet="Incomes" />
+            <End Role="Expenses" EntitySet="Expenses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Financial__finAi__534D60F1" Association="Self.FK__Financial__finAi__534D60F1">
+            <End Role="FinancialAidType" EntitySet="FinancialAidTypes" />
+            <End Role="FinancialAidAmt" EntitySet="FinancialAidAmts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Goals__incomeID__4E88ABD4" Association="Self.FK__Goals__incomeID__4E88ABD4">
+            <End Role="Income" EntitySet="Incomes" />
+            <End Role="Goals" EntitySet="Goals" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FinanceCentralModelStoreContainer" CdmEntityContainer="FCModels">
+          <EntitySetMapping Name="Expenses">
+            <EntityTypeMapping TypeName="FinanceCentralModel.Expens">
+              <MappingFragment StoreEntitySet="Expenses">
+                <ScalarProperty Name="expenseID" ColumnName="expenseID" />
+                <ScalarProperty Name="expenseName" ColumnName="expenseName" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="day" ColumnName="day" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="incomeID" ColumnName="incomeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinancialAidAmts">
+            <EntityTypeMapping TypeName="FinanceCentralModel.FinancialAidAmt">
+              <MappingFragment StoreEntitySet="FinancialAidAmt">
+                <ScalarProperty Name="finAidName" ColumnName="finAidName" />
+                <ScalarProperty Name="finAidType" ColumnName="finAidType" />
+                <ScalarProperty Name="finAidAmount" ColumnName="finAidAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinancialAidTypes">
+            <EntityTypeMapping TypeName="FinanceCentralModel.FinancialAidType">
+              <MappingFragment StoreEntitySet="FinancialAidType">
+                <ScalarProperty Name="typeName" ColumnName="typeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Goals">
+            <EntityTypeMapping TypeName="FinanceCentralModel.Goal">
+              <MappingFragment StoreEntitySet="Goals">
+                <ScalarProperty Name="goalID" ColumnName="goalID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="goalDescription" ColumnName="goalDescription" />
+                <ScalarProperty Name="goalTarget" ColumnName="goalTarget" />
+                <ScalarProperty Name="goalCurrent" ColumnName="goalCurrent" />
+                <ScalarProperty Name="incomeID" ColumnName="incomeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Incomes">
+            <EntityTypeMapping TypeName="FinanceCentralModel.Income">
+              <MappingFragment StoreEntitySet="Income">
+                <ScalarProperty Name="incomeID" ColumnName="incomeID" />
+                <ScalarProperty Name="incomeName" ColumnName="incomeName" />
+                <ScalarProperty Name="hourlyWage" ColumnName="hourlyWage" />
+                <ScalarProperty Name="avgWeeklyHours" ColumnName="avgWeeklyHours" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

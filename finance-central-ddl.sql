@@ -1,5 +1,7 @@
+-- Author: Michelle Amos
+
 CREATE TABLE Income (
-    incomeID            INT,
+    incomeID            INT NOT NULL IDENTITY(100,1),
     incomeName          VARCHAR(30),
     hourlyWage          MONEY,
     avgWeeklyHours      INT,
@@ -7,33 +9,38 @@ CREATE TABLE Income (
 );
 
 CREATE TABLE Expenses (
-    expenseID       INT,
-    expenseName     VARCHAR(30),
-    expenseAmount   MONEY,
-    incomeSourceID  INT,
+    expenseID           INT NOT NULL IDENTITY(1000,1),
+    expenseName         VARCHAR(30) NOT NULL,
+    amount              MONEY,
+    category            VARCHAR(30), -- Example: Shopping, groceries, etc.
+    month               VARCHAR(9),
+    day                 INT,
+    year                INT,
+    incomeID            INT,
     PRIMARY KEY (expenseID),
-    FOREIGN KEY (incomeSourceID) REFERENCES Income(incomeID)
+    FOREIGN KEY (incomeID) REFERENCES Income(incomeID)
 );
 
 CREATE TABLE Goals (
-    goalID          INT,
-    goalName        VARCHAR(30),
-    goalTarget      MONEY,
-    goalCurrent     MONEY,
-    incomeSourceID  INT,
+    goalID              INT NOT NULL IDENTITY(1,1),
+    name                VARCHAR(30) NOT NULL,
+    goalDescription     VARCHAR(150),
+    goalTarget          MONEY,
+    goalCurrent         MONEY,
+    incomeID            INT,
     PRIMARY KEY (goalID),
-    FOREIGN KEY (incomeSourceID) REFERENCES Income(incomeID)
+    FOREIGN KEY (incomeID) REFERENCES Income(incomeID)
 );
 
 -- Tracking financial aid
 CREATE TABLE FinancialAidType (
-    typeName      VARCHAR(30),
+    typeName      VARCHAR(30) NOT NULL,
     PRIMARY KEY (typeName)
 );
 
 CREATE TABLE FinancialAidAmt (
-    finAidName        VARCHAR(30),
-    finAidType        VARCHAR(30),
+    finAidName        VARCHAR(30) NOT NULL, -- Example: McDonald's Giving
+    finAidType        VARCHAR(30) NOT NULL, -- Example: Scholarship
     finAidAmount      MONEY,
     PRIMARY KEY (finAidName),
     FOREIGN KEY (finAidType) REFERENCES FinancialAidType(typeName)
