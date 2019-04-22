@@ -1,0 +1,82 @@
+﻿@model FinanceCentral.Models.Expenses
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Expenses</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.expenseID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.expenseID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.expenseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.expenseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.month)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.month)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.day)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.incomeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.incomeID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.expenseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

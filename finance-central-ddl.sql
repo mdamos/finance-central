@@ -47,4 +47,4 @@ CREATE TABLE FinancialAidAmt (
 );
 
 SELECT *
-FROM Income;
+FROM Expenses;

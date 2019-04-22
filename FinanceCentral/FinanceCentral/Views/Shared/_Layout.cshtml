@@ -21,8 +21,10 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Income", "Index", "Income")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Expenses", "Index", "Expenses")</li>
+                    <li>@Html.ActionLink("Financial Aid", "Index", "Financial Aid")</li>
+                    <li>@Html.ActionLink("Goals", "Index", "Goals")</li>
+                    <li>@Html.ActionLink("Spending Visualization", "Index", "Spending Visualization")</li>
                 </ul>
             </div>
         </div>
@@ -31,7 +33,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Finance Central</p>
+            <p>&copy; @DateTime.Now.Year - Michelle Amos</p>
         </footer>
     </div>
 
