@@ -112,7 +112,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FinanceCentralModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Expens">
+        <EntityType Name="Expenses">
           <Key>
             <PropertyRef Name="expenseID" />
           </Key>
@@ -167,7 +167,7 @@
         </EntityType>
         <Association Name="FK__Expenses__income__4BAC3F29">
           <End Role="Income" Type="Self.Income" Multiplicity="0..1" />
-          <End Role="Expenses" Type="Self.Expens" Multiplicity="*" />
+          <End Role="Expenses" Type="FinanceCentralModel.Expenses" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Income">
               <PropertyRef Name="incomeID" />
@@ -202,7 +202,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="FCModels" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Expenses" EntityType="Self.Expens" />
+          <EntitySet Name="Expenses" EntityType="FinanceCentralModel.Expenses" />
           <EntitySet Name="FinancialAidAmts" EntityType="Self.FinancialAidAmt" />
           <EntitySet Name="FinancialAidTypes" EntityType="Self.FinancialAidType" />
           <EntitySet Name="Goals" EntityType="Self.Goal" />
@@ -227,7 +227,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="FinanceCentralModelStoreContainer" CdmEntityContainer="FCModels">
           <EntitySetMapping Name="Expenses">
-            <EntityTypeMapping TypeName="FinanceCentralModel.Expens">
+            <EntityTypeMapping TypeName="FinanceCentralModel.Expenses">
               <MappingFragment StoreEntitySet="Expenses">
                 <ScalarProperty Name="expenseID" ColumnName="expenseID" />
                 <ScalarProperty Name="expenseName" ColumnName="expenseName" />

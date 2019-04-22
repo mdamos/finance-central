@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FinanceCentral.Models.Income>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.incomeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hourlyWage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.avgWeeklyHours)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.incomeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hourlyWage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.avgWeeklyHours)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.incomeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.incomeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.incomeID })
+        </td>
+    </tr>
+}
+
+</table>

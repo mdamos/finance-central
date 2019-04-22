@@ -129,18 +129,39 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IncomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Expenses.cs">
+      <DependentUpon>FCModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FCModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FCModel.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FCModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FCModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\FCModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FCModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FinancialAidAmt.cs">
+      <DependentUpon>FCModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FinancialAidType.cs">
+      <DependentUpon>FCModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Goal.cs">
+      <DependentUpon>FCModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Income.cs">
+      <DependentUpon>FCModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -156,6 +177,12 @@
     <Content Include="Models\FCModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FCModel.Context.cs</LastGenOutput>
+      <DependentUpon>FCModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\FCModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FCModel.edmx</DependentUpon>
+      <LastGenOutput>FCModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -163,9 +190,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>FCModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\FCModel.edmx.diagram">
+    <Content Include="Models\FCModel.edmx.diagram">
       <DependentUpon>FCModel.edmx</DependentUpon>
-    </None>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -191,6 +218,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Income\Index.cshtml" />
+    <Content Include="Views\Income\Create.cshtml" />
+    <Content Include="Views\Income\Details.cshtml" />
+    <Content Include="Views\Income\Edit.cshtml" />
+    <Content Include="Views\Income\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

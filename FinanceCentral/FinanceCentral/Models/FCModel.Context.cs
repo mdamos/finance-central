@@ -25,7 +25,7 @@ namespace FinanceCentral.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Expens> Expenses { get; set; }
+        public virtual DbSet<Expenses> Expenses { get; set; }
         public virtual DbSet<FinancialAidAmt> FinancialAidAmts { get; set; }
         public virtual DbSet<FinancialAidType> FinancialAidTypes { get; set; }
         public virtual DbSet<Goal> Goals { get; set; }

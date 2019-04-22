@@ -1,0 +1,42 @@
+﻿@model FinanceCentral.Models.Income
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Income</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.incomeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.incomeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hourlyWage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hourlyWage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.avgWeeklyHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.avgWeeklyHours)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.incomeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -12,7 +12,7 @@ namespace FinanceCentral.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Expens
+    public partial class Expenses
     {
         public int expenseID { get; set; }
         public string expenseName { get; set; }

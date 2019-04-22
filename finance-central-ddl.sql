@@ -45,3 +45,6 @@ CREATE TABLE FinancialAidAmt (
     PRIMARY KEY (finAidName),
     FOREIGN KEY (finAidType) REFERENCES FinancialAidType(typeName)
 );
+
+SELECT *
+FROM Income;
