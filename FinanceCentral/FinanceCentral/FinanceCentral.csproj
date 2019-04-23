@@ -242,7 +242,6 @@
     <Content Include="Views\Goals\Create.cshtml" />
     <Content Include="Views\Goals\Edit.cshtml" />
     <Content Include="Views\Goals\Delete.cshtml" />
-    <Content Include="Views\ExpensesVisualization\GetData.cshtml" />
     <Content Include="Views\ExpensesVisualization\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

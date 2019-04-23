@@ -1,4 +1,6 @@
-﻿@model FinanceCentral.Models.Expenses
+﻿<!--Reference: https://www.highcharts.com-->
+
+@model FinanceCentral.Models.Expenses
 
 @{
     ViewBag.Title = "GetData";
@@ -41,7 +43,7 @@
                     }
                 },
                 series: [{
-                    name: 'Brands',
+                    name: 'Overall Expense Percentage',
                     colorByPoint: true,
                     data: [{
                         name: 'January',
