@@ -6,6 +6,9 @@
     <title>@ViewBag.Title - Finance Central</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -24,7 +27,7 @@
                     <li>@Html.ActionLink("Expenses", "Index", "Expenses")</li>
                     <li>@Html.ActionLink("Financial Aid", "Index", "FinancialAid")</li>
                     <li>@Html.ActionLink("Goals", "Index", "Goals")</li>
-                    <li>@Html.ActionLink("Spending Visualization", "Index", "Spending Visualization")</li>
+                    <li>@Html.ActionLink("Expenses Visualization", "Index", "ExpensesVisualization")</li>
                 </ul>
             </div>
         </div>
@@ -37,7 +40,6 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

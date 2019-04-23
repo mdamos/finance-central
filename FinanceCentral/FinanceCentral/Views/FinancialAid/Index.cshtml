@@ -1,14 +1,31 @@
 ﻿@model IEnumerable<FinanceCentral.Models.FinancialAidAmt>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Financial Aid";
 }
 
-<h2>Index</h2>
+<h2>Financial Aid</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<table class="table">
+    <tr>
+        <th>Valid Financial Aid Types</th>
+    </tr>
+    <tr>
+        <td>Grant</td>
+    </tr>
+    <tr>
+        <td>Loan</td>
+    </tr>
+    <tr>
+        <td>Scholarship</td>
+    </tr>
+    
+</table>
+
+<h3>List of Financial Aid Received</h3>
 <table class="table">
     <tr>
         <th>

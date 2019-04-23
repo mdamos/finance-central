@@ -15,11 +15,11 @@ namespace FinanceCentral.Controllers
         }
 
         // GET: FinancialAid/Details/5
-        public ActionResult Details(string name)
+        public ActionResult Details(string id)
         {
             using (FCModels finAidAmtModel = new FCModels())
             {
-                return View(finAidAmtModel.FinancialAidAmt.Where(x => x.finAidName == name).FirstOrDefault());
+                return View(finAidAmtModel.FinancialAidAmt.Where(x => x.finAidName == id).FirstOrDefault());
             }
         }
 
@@ -50,17 +50,17 @@ namespace FinanceCentral.Controllers
         }
 
         // GET: FinancialAid/Edit/5
-        public ActionResult Edit(string name)
+        public ActionResult Edit(string id)
         {
             using (FCModels finAidAmtModel = new FCModels())
             {
-                return View(finAidAmtModel.FinancialAidAmt.Where(x => x.finAidName == name).FirstOrDefault());
+                return View(finAidAmtModel.FinancialAidAmt.Where(x => x.finAidName == id).FirstOrDefault());
             }
         }
 
         // POST: FinancialAid/Edit/5
         [HttpPost]
-        public ActionResult Edit(string name, FinancialAidAmt finAid)
+        public ActionResult Edit(string id, FinancialAidAmt finAid)
         {
             try
             {
@@ -79,23 +79,23 @@ namespace FinanceCentral.Controllers
         }
 
         // GET: FinancialAid/Delete/5
-        public ActionResult Delete(string name)
+        public ActionResult Delete(string id)
         {
             using (FCModels finAidAmtModel = new FCModels())
             {
-                return View(finAidAmtModel.FinancialAidAmt.Where(x => x.finAidName == name).FirstOrDefault());
+                return View(finAidAmtModel.FinancialAidAmt.Where(x => x.finAidName == id).FirstOrDefault());
             }
         }
 
         // POST: FinancialAid/Delete/5
         [HttpPost]
-        public ActionResult Delete(string name, FormCollection collection)
+        public ActionResult Delete(string id, FormCollection collection)
         {
             try
             {
                 using (FCModels finAidAmtModel = new FCModels())
                 {
-                    FinancialAidAmt finAid = finAidAmtModel.FinancialAidAmt.Where(x => x.finAidName == name).FirstOrDefault();
+                    FinancialAidAmt finAid = finAidAmtModel.FinancialAidAmt.Where(x => x.finAidName == id).FirstOrDefault();
                     finAidAmtModel.FinancialAidAmt.Remove(finAid);
                     finAidAmtModel.SaveChanges();
                 }

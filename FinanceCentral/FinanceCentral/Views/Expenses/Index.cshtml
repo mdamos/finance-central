@@ -1,14 +1,16 @@
 ﻿@model IEnumerable<FinanceCentral.Models.Expenses>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Expenses";
 }
 
-<h2>Index</h2>
+<h2>Expenses</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+<h3>List of Expenses</h3>
 <table class="table">
     <tr>
         <th>
@@ -35,7 +37,6 @@
         <th>
             @Html.DisplayNameFor(model => model.incomeID)
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -65,7 +66,7 @@
             @Html.DisplayFor(modelItem => item.incomeID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.expenseID }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.expenseID }) |
             @Html.ActionLink("Details", "Details", new { id = item.expenseID }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.expenseID })
         </td>
@@ -73,3 +74,7 @@
 }
 
 </table>
+
+<div>
+    @Model.Sum(i => i.amount)
+</div>

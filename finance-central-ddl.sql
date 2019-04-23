@@ -46,5 +46,6 @@ CREATE TABLE FinancialAidAmt (
     FOREIGN KEY (finAidType) REFERENCES FinancialAidType(typeName)
 );
 
-SELECT *
-FROM FinancialAidType;
+SELECT SUM(amount) 
+FROM Expenses
+WHERE month = 'April';
