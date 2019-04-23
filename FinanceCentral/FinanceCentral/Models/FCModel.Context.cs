@@ -28,7 +28,7 @@ namespace FinanceCentral.Models
         public virtual DbSet<Expenses> Expenses { get; set; }
         public virtual DbSet<FinancialAidAmt> FinancialAidAmt { get; set; }
         public virtual DbSet<FinancialAidType> FinancialAidTypes { get; set; }
-        public virtual DbSet<Goal> Goals { get; set; }
+        public virtual DbSet<Goals> Goals { get; set; }
         public virtual DbSet<Income> Incomes { get; set; }
     }
 }

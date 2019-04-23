@@ -142,7 +142,7 @@
           <Property Name="typeName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="FinancialAidAmts" Relationship="Self.FK__Financial__finAi__534D60F1" FromRole="FinancialAidType" ToRole="FinancialAidAmt" />
         </EntityType>
-        <EntityType Name="Goal">
+        <EntityType Name="Goals">
           <Key>
             <PropertyRef Name="goalID" />
           </Key>
@@ -191,7 +191,7 @@
         </Association>
         <Association Name="FK__Goals__incomeID__4E88ABD4">
           <End Role="Income" Type="Self.Income" Multiplicity="0..1" />
-          <End Role="Goals" Type="Self.Goal" Multiplicity="*" />
+          <End Role="Goals" Type="FinanceCentralModel.Goals" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Income">
               <PropertyRef Name="incomeID" />
@@ -205,7 +205,7 @@
           <EntitySet Name="Expenses" EntityType="FinanceCentralModel.Expenses" />
           <EntitySet Name="FinancialAidAmts" EntityType="Self.FinancialAidAmt" />
           <EntitySet Name="FinancialAidTypes" EntityType="Self.FinancialAidType" />
-          <EntitySet Name="Goals" EntityType="Self.Goal" />
+          <EntitySet Name="Goals1" EntityType="FinanceCentralModel.Goals" />
           <EntitySet Name="Incomes" EntityType="Self.Income" />
           <AssociationSet Name="FK__Expenses__income__4BAC3F29" Association="Self.FK__Expenses__income__4BAC3F29">
             <End Role="Income" EntitySet="Incomes" />
@@ -217,7 +217,7 @@
           </AssociationSet>
           <AssociationSet Name="FK__Goals__incomeID__4E88ABD4" Association="Self.FK__Goals__incomeID__4E88ABD4">
             <End Role="Income" EntitySet="Incomes" />
-            <End Role="Goals" EntitySet="Goals" />
+            <End Role="Goals" EntitySet="Goals1" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -256,8 +256,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Goals">
-            <EntityTypeMapping TypeName="FinanceCentralModel.Goal">
+          <EntitySetMapping Name="Goals1">
+            <EntityTypeMapping TypeName="FinanceCentralModel.Goals">
               <MappingFragment StoreEntitySet="Goals">
                 <ScalarProperty Name="goalID" ColumnName="goalID" />
                 <ScalarProperty Name="name" ColumnName="name" />

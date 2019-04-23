@@ -18,7 +18,7 @@ namespace FinanceCentral.Models
         public Income()
         {
             this.Expenses = new HashSet<Expenses>();
-            this.Goals = new HashSet<Goal>();
+            this.Goals = new HashSet<Goals>();
         }
     
         public int incomeID { get; set; }
@@ -29,6 +29,6 @@ namespace FinanceCentral.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Expenses> Expenses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Goal> Goals { get; set; }
+        public virtual ICollection<Goals> Goals { get; set; }
     }
 }

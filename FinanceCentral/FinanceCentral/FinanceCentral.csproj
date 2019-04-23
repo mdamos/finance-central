@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ExpensesController.cs" />
     <Compile Include="Controllers\FinancialAidController.cs" />
+    <Compile Include="Controllers\GoalsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IncomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -159,7 +160,7 @@
     <Compile Include="Models\FinancialAidType.cs">
       <DependentUpon>FCModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Goal.cs">
+    <Compile Include="Models\Goals.cs">
       <DependentUpon>FCModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Income.cs">
@@ -235,6 +236,11 @@
     <Content Include="Views\FinancialAid\Edit.cshtml" />
     <Content Include="Views\FinancialAid\Delete.cshtml" />
     <Content Include="Views\FinancialAid\Create.cshtml" />
+    <Content Include="Views\Goals\Index.cshtml" />
+    <Content Include="Views\Goals\Details.cshtml" />
+    <Content Include="Views\Goals\Create.cshtml" />
+    <Content Include="Views\Goals\Edit.cshtml" />
+    <Content Include="Views\Goals\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

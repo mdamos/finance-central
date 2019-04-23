@@ -12,7 +12,7 @@ namespace FinanceCentral.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Goal
+    public partial class Goals
     {
         public int goalID { get; set; }
         public string name { get; set; }

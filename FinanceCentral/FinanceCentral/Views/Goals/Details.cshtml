@@ -1,0 +1,58 @@
+﻿@model FinanceCentral.Models.Goals
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Goals</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.goalDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.goalDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.goalTarget)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.goalTarget)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.goalCurrent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.goalCurrent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.incomeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.incomeID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
