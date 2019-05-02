@@ -179,6 +179,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\fcLogo-Dark.png" />
+    <Content Include="img\fcLogo-transparent.png" />
+    <Content Include="img\fcLogo-transparent2.png" />
     <Content Include="Models\FCModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FCModel.Context.cs</LastGenOutput>

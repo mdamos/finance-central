@@ -1,62 +1,74 @@
-﻿body {
+﻿body, h1, h2, h3, th, td {
+    color: rgb(67, 67, 72);
+}
+
+    div.container, div.body-content {
+        padding-left: 170px;
+    }
+
+    h1 {
+        color: rgb(67, 67, 72);
+        font-weight: bold;
+    }
+
+h2.title {
+    border-bottom: 2px solid #ffdf74;
+    padding-bottom: 15px;
+}
+
+    nav {
+        height: 100%;
+        background-color: rgb(67, 67, 72);
+        overflow-x: hidden;
+        width: 300px;
+        position: fixed;
+        top: 0;
+        padding: 25px;
+        text-align: center;
     
-    /*background-color: #4d4dff;*/
-}
+    }
 
-div.container, div.body-content {
-    padding-left: 120px;
-}
+    .highlighted {
+        color: #ffdf74;
+        text-decoration: none;
+        border: 3px solid #ffdf74;
+        border-radius: 5px;
+        padding: 5px;
+    }
 
-nav {
-    height: 100%;
-    background-color: #7676d6; /* maybe use a nice shade of blue?*/
-    overflow-x: hidden;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    padding: 25px;
-}
+    img.logo{
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+    }
 
-.highlighted{
+    nav ul {
+        list-style: none;
+        text-decoration: none;
+        padding-top: 55px;
+    }
 
-}
+    nav ul li {
+        display: block;
+        padding-right: 40px;
+        padding-bottom: 30px;
+    }
 
-nav ul {
-    list-style: none;
+    nav ul li a {
+        font-size: 25px;
+        /*color: white;*/
+        color: #ffdf74;
+        font-weight: bold;
+    }
+
+nav a:hover {
+    color: #ffdf74;
     text-decoration: none;
+    border: 3px solid #ffdf74;
+    border-radius: 5px;
+    padding: 5px;
 }
 
-nav ul li a{
-    font-size: 25px;
-    color: white;    
-}
-
-nav a:hover{
-    color: darkblue;
-    text-decoration: none;
-}
-
-footer {
-    /*color: white;*/
-}
-
-/*div.container {
-    background-color: #ffa64d;
-    border: none;
-    height: 100%;
-    width: 160px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-div.container ul li {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-}*/
+    footer {
+        /*color: white;*/
+    }
