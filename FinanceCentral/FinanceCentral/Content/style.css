@@ -1,9 +1,39 @@
 ﻿body {
+    
     /*background-color: #4d4dff;*/
 }
 
-div.main{
-    /*color: white;*/
+div.container, div.body-content {
+    padding-left: 120px;
+}
+
+nav {
+    height: 100%;
+    background-color: #7676d6; /* maybe use a nice shade of blue?*/
+    overflow-x: hidden;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    padding: 25px;
+}
+
+.highlighted{
+
+}
+
+nav ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+nav ul li a{
+    font-size: 25px;
+    color: white;    
+}
+
+nav a:hover{
+    color: darkblue;
+    text-decoration: none;
 }
 
 footer {

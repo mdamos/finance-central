@@ -10,27 +10,17 @@
     <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Finance Central", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Income", "Index", "Income")</li>
-                    <li>@Html.ActionLink("Expenses", "Index", "Expenses")</li>
-                    <li>@Html.ActionLink("Financial Aid", "Index", "FinancialAid")</li>
-                    <li>@Html.ActionLink("Goals", "Index", "Goals")</li>
-                    <li>@Html.ActionLink("Expenses Visualization", "Index", "ExpensesVisualization")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <nav>
+        <ul>
+            <li><a href="~/Home/Index">Home</a></li>
+            <li><a href="~/Income/Index">Income</a></li>
+            <li><a href="~/Expenses/Index">Expenses</a></li>
+            <li><a href="~/FinancialAid/Index">Financial Aid</a></li>
+            <li><a href="~/Goals/Index">Goals</a></li>
+            <li><a href="~/ExpensesVisualization/Index">Expenses Visualization</a></li>
+        </ul>    
+    </nav>
+        
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -39,7 +29,7 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>
