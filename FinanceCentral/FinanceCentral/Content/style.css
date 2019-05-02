@@ -3,7 +3,7 @@
 }
 
     div.container, div.body-content {
-        padding-left: 170px;
+        padding-left: 175px;
     }
 
     h1 {
@@ -16,25 +16,17 @@ h2.title {
     padding-bottom: 15px;
 }
 
-    nav {
-        height: 100%;
-        background-color: rgb(67, 67, 72);
-        overflow-x: hidden;
-        width: 300px;
-        position: fixed;
-        top: 0;
-        padding: 25px;
-        text-align: center;
-    
-    }
-
-    .highlighted {
-        color: #ffdf74;
-        text-decoration: none;
-        border: 3px solid #ffdf74;
-        border-radius: 5px;
-        padding: 5px;
-    }
+nav {
+    height: 100%;
+    background-color: rgb(67, 67, 72);
+    overflow-x: hidden;
+    width: 305px;
+    position: fixed;
+    top: 0;
+    padding: 25px;
+    text-align: center;
+    border-right: 3px solid #ffdf74;
+}
 
     img.logo{
         width: 100px;
@@ -54,21 +46,43 @@ h2.title {
         padding-bottom: 30px;
     }
 
-    nav ul li a {
-        font-size: 25px;
-        /*color: white;*/
-        color: #ffdf74;
-        font-weight: bold;
-    }
+        nav ul li a {
+            font-size: 25px;
+            color: #ffdf74;
+            font-weight: bold;
+            -webkit-transition-duration: 0.35s; /* For Safari */
+            transition-duration: 0.35s;
+        }
 
 nav a:hover {
-    color: #ffdf74;
     text-decoration: none;
-    border: 3px solid #ffdf74;
-    border-radius: 5px;
-    padding: 5px;
+    border: 2px solid #ffc100;
+    border-radius: 2px;
+    padding: 10px;
+    color: #ffdf74;
 }
 
-    footer {
-        /*color: white;*/
-    }
+/*p a {
+    color: rgb(67, 67, 72);
+    font-weight: bold;
+}
+
+    p a:hover {
+        color: rgb(67, 67, 72);
+        border: 1px solid rgb(67, 67, 72);
+        text-decoration: none;
+    }*/
+
+h3 {
+    background-color: #ffdf74;
+    font-weight: bold;
+    overflow: hidden;
+    margin: 0px;
+    padding: 10px;
+}
+
+th {
+    background-color: rgb(67, 67, 72);
+    color: white;
+    font-weight: normal;
+}
