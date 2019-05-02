@@ -1,7 +1,32 @@
 ﻿body {
-    /*background-color: lightpink;*/
+    /*background-color: #4d4dff;*/
 }
 
-div.jumbotron{
+div.main{
     /*color: white;*/
 }
+
+footer {
+    /*color: white;*/
+}
+
+/*div.container {
+    background-color: #ffa64d;
+    border: none;
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+div.container ul li {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}*/

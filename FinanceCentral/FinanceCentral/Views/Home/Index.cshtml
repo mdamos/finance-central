@@ -1,12 +1,21 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<!DOCTYPE html>
 <head>
     <link href="~/Content/style.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
-    <div class="jumbotron">
+    <div class="main">
+        <nav>
+            <a href="~/Home/Index">Home</a>
+            <a href="~/Income/Index">Income</a>
+            <a href="~/Expenses/Index">Expenses</a>
+            <a href="~/FinancialAid/Index">Financial Aid</a>
+            <a href="~/Goals/Index">Goals</a>
+            <a href="~/ExpensesVisualization/Index">Expenses Visualization</a>
+        </nav>
         <h1>Finance Central</h1>
         <p class="lead">A financial management web application targeting college students.</p>
     </div>
