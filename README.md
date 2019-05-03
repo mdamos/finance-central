@@ -14,7 +14,7 @@ Finance Central allows its users to...
 ## Database Design
 <img src="FinanceCentral_DBDiagram.svg" alt="Graphic of Finance Central's database design"/>
 
-### Using Finance Central
+## Using Finance Central
 <ol>
   <li>Using SQL Server, create a database called FinanceCentral.</li>
   <li><a href="finance-central-ddl.sql">Click here for the script that creates the tables.</a></li>
