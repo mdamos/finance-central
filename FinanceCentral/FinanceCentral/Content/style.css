@@ -2,12 +2,12 @@
     color: rgb(67, 67, 72);
 }
 
-    div.container, div.body-content {
-        padding-left: 305px;
-    }
+div.container, div.body-content {
+    padding-left: 305px;
+}
 
-hr.homepage {
-    border-top: 1px solid rgb(67, 67, 72);
+hr {
+    margin-top: 80px;
 }
 
 p.lead {
@@ -15,7 +15,6 @@ p.lead {
 }
 
 div.contentBox {
-    /*border: 2px dashed #ffdf74;*/
     width: 700px;
     display: inline-block;
 }
@@ -47,35 +46,35 @@ nav {
     border-right: 3px solid #ffdf74;
 }
 
-.dollarSign {
+.colorDot {
     color: #ffc100;
 }
 
-    img.logo{
-        width: 100px;
-        height: 100px;
-        display: inline-block;
-    }
+img.logo{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
 
-    nav ul {
-        list-style: none;
-        text-decoration: none;
-        padding-top: 55px;
-    }
+nav ul {
+    list-style: none;
+    text-decoration: none;
+    padding-top: 55px;
+}
 
-    nav ul li {
-        display: block;
-        padding-right: 40px;
-        padding-bottom: 30px;
-    }
+nav ul li {
+    display: block;
+    padding-right: 40px;
+    padding-bottom: 30px;
+}
 
-        nav ul li a {
-            font-size: 25px;
-            color: #ffdf74;
-            font-weight: bold;
-            -webkit-transition-duration: 0.35s; /* For Safari */
-            transition-duration: 0.35s;
-        }
+nav ul li a {
+    font-size: 25px;
+    color: #ffdf74;
+    font-weight: bold;
+    -webkit-transition-duration: 0.35s; /* For Safari */
+    transition-duration: 0.35s;
+}
 
 nav a:hover {
     text-decoration: none;
@@ -109,14 +108,14 @@ nav a:hover {
     height: 35%;
     width: 35%;
 }
-    .expenses p {
-        float: left;
-        font-size: 25px;
-        font-weight: bold;
-        padding-right: 90px;
-        border: 2px dashed #ffdf74;
-        padding: 10px;
-    }
+.expenses p {
+    float: left;
+    font-size: 25px;
+    font-weight: bold;
+    padding-right: 90px;
+    border: 2px dashed #ffdf74;
+    padding: 10px;
+}
 
 .finAid {
     background-color: #ffdf74;
@@ -126,26 +125,26 @@ nav a:hover {
     height: 30%;
     width: 30%;
 }
-    .finAid p {
-        float: right;
-        font-size: 25px;
-        font-weight: bold;
-        border: 2px dashed white;
-        padding: 10px;
-    }
+.finAid p {
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    border: 2px dashed white;
+    padding: 10px;
+}
 
 .goals {
     padding: 40px;
 }
-    .goals p {
-        float: left;
-        font-size: 25px;
-        font-weight: bold;
-        padding-right: 152px;
-        border: 2px dashed #ffdf74;
-        padding: 10px;
-        margin-top: 75px;
-    }
+
+.goals p {
+    float: left;
+    font-size: 25px;
+    font-weight: bold;
+    border: 2px dashed #ffdf74;
+    padding: 10px;
+    margin-top: 75px;
+}
 
 .visual {
     background-color: #ffdf74;
